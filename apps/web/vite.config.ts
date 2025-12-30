@@ -11,6 +11,18 @@ export default defineConfig(() => {
   // development: .env, .env.local, .env.development, .env.development.local
   // production: .env, .env.local, .env.production, .env.production.local
   return {
+    ssr: {
+      optimizeDeps: {
+        include: [
+          "@daveyplate/better-auth-tanstack",
+          "@daveyplate/better-auth-ui/tanstack",
+          "@orpc/client",
+          "@orpc/client/fetch",
+          "@orpc/tanstack-query",
+          "better-auth/react",
+        ],
+      },
+    },
     plugins: [
       paraglideVitePlugin({
         project: "./project.inlang",
